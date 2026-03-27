@@ -1,0 +1,11 @@
+groups:
+  - name: host_alerts
+    rules:
+      - alert: LowAvailableMemory
+        expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100 < 99
+        for: 10s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Cảnh báo: RAM trống quá thấp trên {{ $labels.instance }}"
+          description: "Máy chủ {{ $labels.instance }} chỉ còn dưới 99% RAM trống (hiện tại: {{ $value | humanize }}%)."

@@ -1,0 +1,38 @@
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+
+common:
+  path_prefix: /loki
+  replication_factor: 1
+  compactor_address: http://loki-backend:3100
+  storage:
+    filesystem:
+      chunks_directory: /loki/chunks
+      rules_directory: /loki/rules
+  ring:
+    kvstore:
+      store: memberlist
+
+memberlist:
+  join_members:
+    - loki-backend
+
+# Cấu hình lưu trữ chuẩn v3.x
+schema_config:
+  configs:
+    - from: "2024-01-01"
+      store: tsdb
+      object_store: filesystem
+      schema: v13
+      index:
+        prefix: index_
+        period: 24h
+
+# Cấu hình Compactor chuẩn v3.x (Bỏ shared_store)
+compactor:
+  working_directory: /loki/compactor
+  compactor_ring:
+    kvstore:
+      store: memberlist
