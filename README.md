@@ -1,9 +1,9 @@
-# 🚀 Observability Stack: Metrics & Logging
+# Observability Stack: Metrics & Logging
 
 Dự án triển khai hệ thống giám sát toàn diện (Monitoring & Logging) sử dụng Docker Compose. Hệ thống thu thập số liệu (Metrics) và nhật ký (Logs), sau đó trực quan hóa trên một giao diện duy nhất.
 
 
-## 🏗️ Kiến trúc Hệ thống
+##  Kiến trúc Hệ thống
 
 Dự án được chia thành 2 khối chính:
 
@@ -20,7 +20,7 @@ Dự án được chia thành 2 khối chính:
 ### 3. Giao diện (Visualization)
 * **Grafana:** Bảng điều khiển trung tâm, kết nối đồng thời với khối Metrics và khối Logs.
 
-## 🚀 Hướng dẫn cài đặt & Khởi chạy
+## Hướng dẫn cài đặt & Khởi chạy
 
 **Yêu cầu môi trường:** Docker và Docker Compose.
 
