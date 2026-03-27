@@ -26,5 +26,5 @@ Dự án được chia thành 2 khối chính:
 
 1. **Clone repository:**
    ```bash
-   git clone <URL_CUA_REPO_NAY>
+   git clone https://github.com/Teinsky/Observability-Stack
    cd observability-stack
